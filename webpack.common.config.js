@@ -2,6 +2,7 @@ module.exports = {
   mode: 'development',
   entry: {
     'bundle': ['./src/index.tsx'],
+    'preload': ['./preload.ts'],
     'main': ['./main.tsx']
   },
   output: {
