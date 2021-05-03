@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import Hello from './components/Hello';
+import NavBar from './components/NavBar';
 
 ReactDOM.render(
-  <Hello name="TypeScript" enthusiasmLevel={10} />,
+  <NavBar />,
     document.getElementById('root') as HTMLElement
 );

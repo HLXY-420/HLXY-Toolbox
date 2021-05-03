@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Menu } from 'electron';
+import { app, BrowserWindow, Menu, ipcMain } from 'electron';
 import path from 'path';
 
 function createWindow () {
@@ -6,10 +6,25 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 1000,
     height: 750,
+    useContentSize: true,
+    frame: false,
     webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
       preload: path.join(__dirname, 'preload.js')
     }
   });
+
+  ipcMain.on('min', () => win.minimize());
+  ipcMain.on('max', () => {
+    if (win.isMaximized()) {
+      win.restore();
+    } else {
+      win.maximize();
+    }
+
+  });
+  ipcMain.on('close', () => win.close());
 
   win.webContents.openDevTools();
   win.loadFile('index.html').then();
