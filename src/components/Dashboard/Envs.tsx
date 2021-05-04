@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default function Terminal(): React.ReactElement {
+export default function Envs(): React.ReactElement {
   return (
     <React.Fragment>
 

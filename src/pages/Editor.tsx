@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default function Dashboard(): React.ReactElement {
+export default function Editor(): React.ReactElement {
   return (
     <React.Fragment>
 
