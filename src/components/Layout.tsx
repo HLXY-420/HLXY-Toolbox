@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   title: {
     flexGrow: 1,
-    visibility: "hidden"
+    visibility: 'hidden'
   },
   tab: {
     maxWidth: '70%',
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-export default function NavBar(): React.ReactElement {
+export default function Layout(): React.ReactElement {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -81,7 +81,7 @@ export default function NavBar(): React.ReactElement {
     <div className={classes.root}>
       <AppBar className={classes.drag} color="default">
         <Toolbar variant="dense" disableGutters={true}>
-          
+
           <Tabs
             value={value}
             onChange={handleChange}
@@ -94,16 +94,12 @@ export default function NavBar(): React.ReactElement {
             <Tab label="Item One" {...a11yProps(0)} />
             <Tab label="Item Two" {...a11yProps(1)} />
             <Tab label="Item Three" {...a11yProps(2)} />
-            <Tab label="Item Four" {...a11yProps(3)} />
-            <Tab label="Item Five" {...a11yProps(4)} />
-            <Tab label="Item Six" {...a11yProps(5)} />
-            <Tab label="Item Seven" {...a11yProps(6)} />
           </Tabs>
-          
+
           <Typography className={classes.title}>
             HLXY-Toolbox
           </Typography>
-          
+
           <Toolbar variant="dense" className={classes.noDrag} disableGutters={true}>
             <IconButton color="inherit" onClick={() => { ipcRenderer.send('min'); }}>
               <MinimizeIcon />
@@ -115,7 +111,7 @@ export default function NavBar(): React.ReactElement {
               <CloseIcon />
             </IconButton>
           </Toolbar>
-          
+
         </Toolbar>
       </AppBar>
       <Toolbar variant="dense"/>
@@ -127,18 +123,6 @@ export default function NavBar(): React.ReactElement {
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
       </TabPanel>
     </div>
   );
