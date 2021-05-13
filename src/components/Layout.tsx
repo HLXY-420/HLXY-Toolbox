@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import CloseIcon from '@material-ui/icons/Close';
 import MinimizeIcon from '@material-ui/icons/Minimize';
-import MaximizeIcon from '@material-ui/icons/Maximize';
+import ZoomOutMap from '@material-ui/icons/ZoomOutMap';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -105,7 +105,7 @@ export default function Layout(): React.ReactElement {
               <MinimizeIcon />
             </IconButton>
             <IconButton color="inherit" onClick={() => { ipcRenderer.send('max'); }}>
-              <MaximizeIcon />
+              <ZoomOutMap />
             </IconButton>
             <IconButton color="inherit" onClick={() => { ipcRenderer.send('close'); }}>
               <CloseIcon />
